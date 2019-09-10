@@ -9,10 +9,15 @@
     <ContentPage.Content>
 
         <StackLayout Margin="2,10,2,0" BackgroundColor="White">
-            
-            <Image Source="logo.png" HeightRequest="70" VerticalOptions="End"></Image>
 
-            <Grid>
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                <Image Source="brandLogo.png" HeightRequest="50" VerticalOptions="Center"></Image>
+
+                <Image Source="logo.png" HeightRequest="70" VerticalOptions="Center" Margin="20, 0, 0, 0"></Image>
+            </StackLayout>
+            
+
+            <Grid Margin="0, 10, 0, 0 ">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
@@ -30,13 +35,16 @@
 
                 <Label Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Center" Text="Forgot Password?" TextColor="#007aff" TextDecorations="Underline"></Label>
 
-                <Label Grid.Row="4">
+            </Grid>
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" Margin="0,0,0,10">
+                <Label HorizontalOptions="Start">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="© " />
                             <Span Text="{Binding CurrentYear}" />
                             <Span Text=" Host Analytics, Inc. All Rights Reserved. " />
-                            <Span Text="Terms of Use - Privacy" TextDecorations="Underline"  TextColor="#007aff">
+                            <Span Text="Terms of Use - Privacy" TextColor="#007aff">
                                 <Span.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding TapCommand}"
                                           CommandParameter="https://www.hostanalytics.com/terms-of-use/" />
@@ -45,7 +53,14 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-            </Grid>
+
+                <Image Source="seal.png" HorizontalOptions="End">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="http://privacy.truste.com/privacy-seal/validation?rid=d908531f-bce5-4bae-aec3-4add4e35e70b" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
 
         </StackLayout>        
         
