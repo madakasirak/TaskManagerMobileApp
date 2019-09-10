@@ -39,7 +39,7 @@ namespace TaskManager.Views
             {
                 await DisplayAlert(e.Message, String.Empty, "OK");
 
-                MessagingCenter.Send<object>(this, AppConstants.EVENT_LAUNCH_MAIN_PAGE);
+                MessagingCenter.Send<object>(this, AppConstants.EVENT_LAUNCH_TENANT_SELECTION_PAGE);
             }
         }
     }

@@ -20,11 +20,17 @@ namespace TaskManager
 
             MessagingCenter.Subscribe<object>(this, AppConstants.EVENT_LAUNCH_LOGIN_PAGE, SetLoginPageAsRootPage);
             MessagingCenter.Subscribe<object>(this, AppConstants.EVENT_LAUNCH_MAIN_PAGE, SetMainPageAsRootPage);
+            MessagingCenter.Subscribe<object>(this, AppConstants.EVENT_LAUNCH_TENANT_SELECTION_PAGE, SetTenantSelectionPageAsRootPage);
+        }
+
+        private void SetTenantSelectionPageAsRootPage(object obj)
+        {
+            throw new NotImplementedException();
         }
 
         private void SetLoginPageAsRootPage(object sender)
         {
-            MainPage = new Login();
+            MainPage = new TaskManager.Views.TenantSelection();
         }
 
         private void SetMainPageAsRootPage(object sender)
