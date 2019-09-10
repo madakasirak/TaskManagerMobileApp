@@ -5,21 +5,49 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="TaskManager.Views.Login">
+    
     <ContentPage.Content>
-        <StackLayout>
+
+        <StackLayout Margin="2,10,2,0" BackgroundColor="White">
+            
+            <Image Source="logo.png" HeightRequest="70" VerticalOptions="End"></Image>
+
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Entry x:Name="txtUserName" Grid.Row="0" Text="{Binding UserName}" Placeholder="User Name"/>
 
-                <Entry x:Name="txtPassword" Grid.Row="1" Text="{Binding Password}" IsPassword="True" Placeholder="Password"/>
+                <Entry Grid.Row="0" x:Name="txtUserName"  Text="{Binding UserName}" Placeholder="User Name" PlaceholderColor="#bababa"/>
 
-                <Button x:Name="btnLogin" Grid.Row="2" Text="Login" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Command="{Binding LoginCommand}"/>
+                <Entry Grid.Row="1" x:Name="txtPassword"  Text="{Binding Password}" IsPassword="True" Placeholder="Password" PlaceholderColor="#bababa"/>
+
+                <Button Grid.Row="2" x:Name="btnLogin" Text="Log In" Command="{Binding LoginCommand}" Style="{StaticResource loginBtnStyle}"/>
+
+                <Label Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Center" Text="Forgot Password?" TextColor="#007aff" TextDecorations="Underline"></Label>
+
+                <Label Grid.Row="4">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="© " />
+                            <Span Text="{Binding CurrentYear}" />
+                            <Span Text=" Host Analytics, Inc. All Rights Reserved. " />
+                            <Span Text="Terms of Use - Privacy" TextDecorations="Underline"  TextColor="#007aff">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://www.hostanalytics.com/terms-of-use/" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
             </Grid>
-        </StackLayout>
+
+        </StackLayout>        
+        
     </ContentPage.Content>
 </ContentPage>

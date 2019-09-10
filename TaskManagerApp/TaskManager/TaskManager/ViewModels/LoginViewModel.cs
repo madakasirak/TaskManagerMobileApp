@@ -41,9 +41,18 @@ namespace TaskManager.ViewModels
             }
         }
 
+        public string CurrentYear => DateTime.Now.Year.ToString();
+
         public ICommand LoginCommand { get; }
 
         public event EventHandler<LoginResponseArgs> LoginEvent;
+
+        public ICommand TapCommand => new Command<string>(OpenBrowser);
+
+        private void OpenBrowser(string url)
+        {
+            Device.OpenUri(new Uri(url));
+        }
 
         public LoginViewModel()
         {

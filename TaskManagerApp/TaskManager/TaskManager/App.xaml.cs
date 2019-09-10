@@ -9,6 +9,7 @@ namespace TaskManager
 {
     public partial class App : Application
     {
+        public static bool IsUserLoggedIn { get; set; }
 
         public App()
         {

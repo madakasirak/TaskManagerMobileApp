@@ -24,6 +24,7 @@ namespace TaskManager.Views
 
         private void BtnLogout_Clicked(object sender, EventArgs e)
         {
+            App.IsUserLoggedIn = false;
             MessagingCenter.Send<object>(this, AppConstants.EVENT_LAUNCH_LOGIN_PAGE);
         }
     }

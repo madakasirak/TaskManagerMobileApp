@@ -14,6 +14,13 @@
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
+
+            <Style x:Key="loginBtnStyle" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Fill"/>                
+                <Setter Property="BackgroundColor" Value="#007aff" />                
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
     
