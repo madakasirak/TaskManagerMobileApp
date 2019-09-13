@@ -9,6 +9,7 @@ namespace TaskManager
 {
     public partial class App : Application
     {
+        public static bool IsUserLoggedIn { get; set; }
 
         public App()
         {
@@ -19,15 +20,21 @@ namespace TaskManager
             MainPage = new Login();
 
             MessagingCenter.Subscribe<object>(this, AppConstants.EVENT_LAUNCH_LOGIN_PAGE, SetLoginPageAsRootPage);
-            MessagingCenter.Subscribe<object>(this, AppConstants.EVENT_LAUNCH_MAIN_PAGE, SetMainPageAsRootPage);
+            MessagingCenter.Subscribe<object>(this, AppConstants.EVENT_LAUNCH_MAIN_PAGE, SetTaskManagerPageAsRootPage);
+            MessagingCenter.Subscribe<object>(this, AppConstants.EVENT_LAUNCH_TENANT_SELECTION_PAGE, SetTenantSelectionPageAsRootPage);
+        }
+
+        private void SetTenantSelectionPageAsRootPage(object obj)
+        {
+            MainPage = new TaskManager.Views.TenantSelection();
         }
 
         private void SetLoginPageAsRootPage(object sender)
         {
-            MainPage = new Login();
+            MainPage = new TaskManager.Views.Login();
         }
 
-        private void SetMainPageAsRootPage(object sender)
+        private void SetTaskManagerPageAsRootPage(object sender)
         {
             MainPage = new TaskManager.Views.TaskManager();
         }

@@ -9,5 +9,7 @@ namespace TaskManager.Constants
         public const string EVENT_LAUNCH_LOGIN_PAGE = "EVENT_LAUNCH_LOGIN_PAGE";
 
         public const string EVENT_LAUNCH_MAIN_PAGE = "EVENT_LAUNCH_MAIN_PAGE";
+
+        public const string EVENT_LAUNCH_TENANT_SELECTION_PAGE = "EVENT_LAUNCH_TENANT_SELECTION_PAGE";
     }
 }
